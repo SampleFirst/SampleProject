@@ -73,7 +73,7 @@ If the bot doesn't respond, contact [Admin](https://t.me/xyz)."""
 
 • Contact [Admin](https://t.me/xyz) to request more..."""
 
-    FEATURE = """Hi {users}! I am the first and only DRM downloader Bot on [Telegram](https://telegram.org/).
+    FEATURE = """Hi {user}! I am the first and only DRM downloader Bot on [Telegram](https://telegram.org/).
 
 • Send any DRM link and I will upload it to [Telegram](https://telegram.org/) or [Google Drive](https://drive.google.com/).
 
