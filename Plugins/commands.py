@@ -35,6 +35,13 @@ async def start(client, message):
         reply_markup=start_buttons
     )
 
+@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+async def log_file(bot, message):
+    try:
+        await message.reply_document('Logs.txt')
+    except Exception as e:
+        await message.reply(str(e))
+        
 # About command
 @Client.on_message(filters.command("about") & filters.private & filters.incoming)
 async def about(client, message):
