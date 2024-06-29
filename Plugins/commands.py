@@ -3,7 +3,8 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Script import script
 from utils import temp
-from info import ADMINS 
+from info import ADMINS, SUPPORT_CHATS, UPDATE_CHANNEL, CONTACT_US
+from database.users_chats_db import db
 
 logger = logging.getLogger(__name__)
 
@@ -11,7 +12,9 @@ logger = logging.getLogger(__name__)
 # Start command
 @Client.on_message(filters.command("start") & filters.private & filters.incoming)
 async def start(client, message):
-    start_buttons = InlineKeyboardMarkup(
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(user.id, user.first_name)
+    buttons = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
@@ -33,8 +36,9 @@ async def start(client, message):
         text=script.START.format(user=message.from_user.mention),
         disable_web_page_preview=True,
         quote=True,
-        reply_markup=start_buttons
+        reply_markup=buttons
     )
+    return
 
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
@@ -71,7 +75,7 @@ async def help(client, message):
 @Client.on_message(filters.command("feature") & filters.private & filters.incoming)
 async def feature(client, message):
     await message.reply_text(
-        text=script.FEATURE,
+        text=script.FEATURE.format(user=message.from_user.mention)
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
