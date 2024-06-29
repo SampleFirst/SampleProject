@@ -7,6 +7,7 @@ from info import SESSION, API_ID, API_HASH, BOT_TOKEN, PORT
 from pyrogram import Client 
 from aiohttp import web
 from Plugins import web_server
+from utils import temp
 
 class Bot(Client):
     def __init__(self):
@@ -22,6 +23,7 @@ class Bot(Client):
     async def start(self):
         await super().start()
         me = await self.get_me()
+        temp.U_NAME = me.username
         print(f"New session started for {me.first_name}({me.username})")
         app = web.AppRunner(await web_server())
         await app.setup()
