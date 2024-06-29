@@ -2,6 +2,7 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Script import script
+from info import ADMINS, SUPPORT_CHATS, UPDATE_CHANNEL, CONTACT_US
 
 logger = logging.getLogger(__name__)
 
@@ -13,13 +14,13 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
-                    InlineKeyboardButton("Update Channel 👨‍💻", url="https://t.me/YourUpdateChannel")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("Home", callback_data="home"),
                     InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url="https://t.me/YourContact")
+                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
                 ],
                 [
                     
@@ -37,13 +38,13 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
-                    InlineKeyboardButton("Update Channel 👨‍💻", url="https://t.me/YourUpdateChannel")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
                     InlineKeyboardButton("Home", callback_data="home"),
-                    InlineKeyboardButton("Contact Us", url="https://t.me/YourContact")
+                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
                 ],
                 [
                     
@@ -61,13 +62,13 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
-                    InlineKeyboardButton("Update Channel 👨‍💻", url="https://t.me/YourUpdateChannel")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
                     InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url="https://t.me/YourContact")
+                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
                 ],
                 [
                     
@@ -85,13 +86,13 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
-                    InlineKeyboardButton("Update Channel 👨‍💻", url="https://t.me/YourUpdateChannel")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
                     InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url="https://t.me/YourContact")
+                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
                 ],
                 [
                     
