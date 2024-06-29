@@ -9,7 +9,7 @@ Here, I support a vast number of OTTs from where you can easily download DRM or 
 
 If you encounter any issues, please contact [Support](https://t.me/xyz)."""
 
-    ABOUT = """🤖 My Name - {botname}
+    ABOUT = """🤖 My Name - {bot}
 
 🏷️ Bot Version - <code>v8.0.17</code>
 📝 Language - [Python](https://python.org/)
@@ -58,7 +58,7 @@ If the bot doesn't respond, contact [Admin](https://t.me/xyz)."""
 
 👉 Contact to buy Subscription: [Admin](https://t.me/xyz)"""
 
-    OTT = """BOT's Available OTTs:
+    OTT = """{bot} Available OTTs:
 
 1. Zee5
 2. SonyLiv
