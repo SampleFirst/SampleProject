@@ -17,13 +17,13 @@ async def start(client, message):
     buttons = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Support Group ⚡", url="https://t.me/YourSupportGroup"),
-                InlineKeyboardButton("Update Channel 👨‍💻", url="https://t.me/YourUpdateChannel")
+                InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
             ],
             [
                 InlineKeyboardButton("About", callback_data="about"),
                 InlineKeyboardButton("Help", callback_data="help"),
-                InlineKeyboardButton("Contact Us", url="https://t.me/YourContact")
+                InlineKeyboardButton("Contact Us", url=CONTACT_US)
             ],
             [
                 
