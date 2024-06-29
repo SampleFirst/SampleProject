@@ -22,3 +22,8 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 SUPPORT_CHATS = environ.get('SUPPORT_CHATS', 'https://t.me/YourSupportGroup')
 UPDATE_CHANNEL = environ.get('UPDATE_CHANNEL', 'https://t.me/YourUpdateChannel')
 CONTACT_US = environ.get('CONTACT_US', 'https://t.me/YourContact')
+
+# MongoDB information
+DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_NAME = environ.get('DATABASE_NAME', "")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
