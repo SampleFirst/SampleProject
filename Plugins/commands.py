@@ -2,6 +2,7 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Script import script
+from utils import temp
 
 logger = logging.getLogger(__name__)
 
@@ -61,8 +62,9 @@ async def help(client, message):
 # Feature command
 @Client.on_message(filters.command("feature") & filters.private & filters.incoming)
 async def feature(client, message):
+    bot=temp.U_NAME,
     await message.reply_text(
-        text=script.FEATURE.format(botname="YourBotName"),
+        text=script.FEATURE.format(botname=bot),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
