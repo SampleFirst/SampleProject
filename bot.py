@@ -1,7 +1,10 @@
 import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(lineno)d - %(module)s - %(levelname)s - %(message)s')
+import logging.config
+import asyncio
+
+# Get logging configurations
+logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, PORT
 from pyrogram import Client 
