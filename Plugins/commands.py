@@ -71,7 +71,7 @@ async def help(client, message):
 @Client.on_message(filters.command("feature") & filters.private & filters.incoming)
 async def feature(client, message):
     await message.reply_text(
-        text=script.FEATURE.format(bot=temp.U_NAME),
+        text=script.FEATURE,
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
