@@ -47,7 +47,7 @@ async def log_file(bot, message):
 @Client.on_message(filters.command("about") & filters.private & filters.incoming)
 async def about(client, message):
     await message.reply_text(
-        text=script.ABOUT,
+        text=script.ABOUT.format(bot=temp.U_NAME),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
@@ -70,9 +70,8 @@ async def help(client, message):
 # Feature command
 @Client.on_message(filters.command("feature") & filters.private & filters.incoming)
 async def feature(client, message):
-    bot=temp.U_NAME,
     await message.reply_text(
-        text=script.FEATURE.format(botname=bot),
+        text=script.FEATURE.format(bot=temp.U_NAME),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
@@ -84,7 +83,7 @@ async def feature(client, message):
 @Client.on_message(filters.command("ott") & filters.private & filters.incoming)
 async def ott(client, message):
     await message.reply_text(
-        text=script.OTT.format(user=message.from_user.mention),
+        text=script.OTT.format(user=message.from_user.mention, bot=temp.U_NAME),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
