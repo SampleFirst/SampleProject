@@ -3,6 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Script import script
 from utils import temp
+from info import ADMINS 
 
 logger = logging.getLogger(__name__)
 
