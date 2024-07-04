@@ -102,7 +102,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.OTT.format(bot=temp.B_NAME),
+            text=script.OTT.format(bot=temp.U_NAME),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
