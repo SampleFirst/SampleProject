@@ -27,7 +27,7 @@ async def start(client, message):
             ],
             [
                 
-                InlineKeyboardButton("Usage", callback_data="usage"),
+                InlineKeyboardButton("Otts", callback_data="ott"),
                 InlineKeyboardButton("Plans", callback_data="plans")
             ]
         ]
