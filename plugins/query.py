@@ -30,7 +30,7 @@ async def callback_handler(client, callback_query):
                 ]
             ]
         )
-        await message.reply_text(
+        await callback_query.message.edit_text(
             text=script.START.format(user=message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=buttons
