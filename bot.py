@@ -10,7 +10,7 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, PORT
 from pyrogram import Client 
 from aiohttp import web
-from Plugins import web_server
+from plugins import web_server
 from utils import temp
 
 class Bot(Client):
