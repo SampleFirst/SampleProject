@@ -50,6 +50,8 @@ async def log_file(bot, message):
 # About command
 @Client.on_message(filters.command("about") & filters.private & filters.incoming)
 async def about(client, message):
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(user.id, user.first_name)
     await message.reply_text(
         text=script.ABOUT.format(bot=temp.U_NAME),
         disable_web_page_preview=True,
@@ -62,6 +64,8 @@ async def about(client, message):
 # Help command
 @Client.on_message(filters.command("help") & filters.private & filters.incoming)
 async def help(client, message):
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(user.id, user.first_name)
     await message.reply_text(
         text=script.HELP,
         disable_web_page_preview=True,
@@ -74,6 +78,8 @@ async def help(client, message):
 # Feature command
 @Client.on_message(filters.command("feature") & filters.private & filters.incoming)
 async def feature(client, message):
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(user.id, user.first_name)
     await message.reply_text(
         text=script.FEATURE.format(user=message.from_user.mention),
         disable_web_page_preview=True,
@@ -86,6 +92,8 @@ async def feature(client, message):
 # OTT command
 @Client.on_message(filters.command("ott") & filters.private & filters.incoming)
 async def ott(client, message):
+    if not await db.is_user_exist(message.from_user.id):
+        await db.add_user(user.id, user.first_name)
     await message.reply_text(
         text=script.OTT.format(user=message.from_user.mention, bot=temp.U_NAME),
         disable_web_page_preview=True,
