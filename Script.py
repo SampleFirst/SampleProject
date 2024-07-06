@@ -7,17 +7,17 @@ You can use me to download DRM protected links to [Telegram](https://telegram.or
 
 Here, I support a vast number of OTTs from where you can easily download DRM or non-DRM videos.
 
-If you encounter any issues, please contact [Support](https://t.me/xyz)."""
+If you encounter any issues, please contact [Support]({contact})."""
 
     ABOUT = """🤖 My Name - {bot}
 
-🏷️ Bot Version - <code>v8.0.17</code>
+🏷️ Bot Version - <code>v0.0.2</code>
 📝 Language - [Python](https://python.org/)
 📚 Library - [Pyrogram](http://Pyrogram.org/)
 📡 Hosted on - [Heroku](http://heroku.com/)
 👨‍💻 Developer - Unknown
-📢 Updates Channel - [Support](https://t.me/xyz)
-🕵️ Buy Subscription - [Admin](https://t.me/xyz)"""
+📢 Updates Channel - [Support]({contact})
+🕵️ Buy Subscription - [Admin]({contact})"""
 
     HELP = """Hi! Here you can find all available commands:
 
@@ -34,9 +34,9 @@ If you encounter any issues, please contact [Support](https://t.me/xyz)."""
 
 Just send me any DRM links from supported OTTs to download, that I can also upload to [Google Drive](https://drive.google.com/) or [Telegram](https://telegram.org/).
 
-If the bot doesn't respond, contact [Admin](https://t.me/xyz)."""
+If the bot doesn't respond, contact [Admin]({contact})."""
 
-    CONTACT = """📞 Contact [Admin](https://t.me/xyz)"""
+    CONTACT = """📞 Contact [Admin]({contact})"""
 
     PLANS = """Here you will find all of our Premium Plans:-
 
@@ -56,7 +56,7 @@ If the bot doesn't respond, contact [Admin](https://t.me/xyz)."""
 • Payments are non-refundable, and we do not provide refunds. 
 • If the service ceases to function, no compensation is provided.
 
-👉 Contact to buy Subscription: [Admin](https://t.me/xyz)"""
+👉 Contact to buy Subscription: [Admin]({contact})"""
 
     OTT = """{bot} Available OTTs:
 
@@ -71,7 +71,7 @@ If the bot doesn't respond, contact [Admin](https://t.me/xyz)."""
 9. MX Player
 10. ETV Win
 
-• Contact [Admin](https://t.me/xyz) to request more..."""
+• Contact [Admin]({contact}) to request more..."""
 
     FEATURE = """Hi {user}! I am the first and only DRM downloader Bot on [Telegram](https://telegram.org/).
 
