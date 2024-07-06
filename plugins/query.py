@@ -31,7 +31,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.START.format(user=callback_query.from_user.mention),
+            text=script.START.format(user=callback_query.from_user.mention, contact=CONTACT_US),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
@@ -55,7 +55,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.ABOUT.format(bot=temp.U_NAME),
+            text=script.ABOUT.format(bot=temp.U_NAME, contact=CONTACT_US),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
@@ -79,7 +79,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.HELP,
+            text=script.HELP.format(contact=CONTACT_US),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
@@ -102,7 +102,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.OTT.format(bot=temp.U_NAME),
+            text=script.OTT.format(bot=temp.U_NAME, contact=CONTACT_US),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
@@ -125,7 +125,7 @@ async def callback_handler(client, callback_query):
             ]
         )
         await callback_query.message.edit_text(
-            text=script.PLANS,
+            text=script.PLANS.format(contact=CONTACT_US),
             disable_web_page_preview=True,
             reply_markup=buttons
         )
