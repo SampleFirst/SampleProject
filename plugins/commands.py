@@ -33,7 +33,7 @@ async def start(client, message):
         ]
     )
     await message.reply_text(
-        text=script.START.format(user=message.from_user.mention),
+        text=script.START.format(user=message.from_user.mention, contact=CONTACT_US),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=buttons
@@ -53,7 +53,7 @@ async def about(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(user.id, user.first_name)
     await message.reply_text(
-        text=script.ABOUT.format(bot=temp.U_NAME),
+        text=script.ABOUT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
@@ -67,7 +67,7 @@ async def help(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(user.id, user.first_name)
     await message.reply_text(
-        text=script.HELP,
+        text=script.HELP.format(contact=CONTACT_US),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
