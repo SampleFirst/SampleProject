@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Script import script
 from utils import temp
-from info import ADMINS, SUPPORT_CHATS, UPDATE_CHANNEL, CONTACT_US
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHATS, UPDATE_CHANNEL, CONTACT_US
 from database.users_chats_db import db
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 @Client.on_message(filters.command("start") & filters.private & filters.incoming)
 async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(user.id, user.first_name)
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -51,7 +52,8 @@ async def log_file(bot, message):
 @Client.on_message(filters.command("about") & filters.private & filters.incoming)
 async def about(client, message):
     if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(user.id, user.first_name)
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     await message.reply_text(
         text=script.ABOUT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
@@ -65,7 +67,8 @@ async def about(client, message):
 @Client.on_message(filters.command("help") & filters.private & filters.incoming)
 async def help(client, message):
     if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(user.id, user.first_name)
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     await message.reply_text(
         text=script.HELP.format(contact=CONTACT_US),
         disable_web_page_preview=True,
@@ -79,7 +82,8 @@ async def help(client, message):
 @Client.on_message(filters.command("features") & filters.private & filters.incoming)
 async def features(client, message):
     if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(user.id, user.first_name)
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     await message.reply_text(
         text=script.FEATURE.format(user=message.from_user.mention),
         disable_web_page_preview=True,
@@ -93,7 +97,8 @@ async def features(client, message):
 @Client.on_message(filters.command("otts") & filters.private & filters.incoming)
 async def otts(client, message):
     if not await db.is_user_exist(message.from_user.id):
-        await db.add_user(user.id, user.first_name)
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     await message.reply_text(
         text=script.OTT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
