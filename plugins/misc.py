@@ -43,3 +43,75 @@ async def list_users(bot, message):
     except Exception as e:
         await msg.edit(f"An error occurred: {e}")
         
+# Define command handlers
+@Client.on_message(filters.command("features"))
+async def features(client, message):
+    await message.reply_text("Available features")
+
+@Client.on_message(filters.command("plans"))
+async def plans(client, message):
+    await message.reply_text("Plan details will be added here.")
+
+@Client.on_message(filters.command("myplan"))
+async def myplan(client, message):
+    await message.reply_text("You don't have a plan yet.")
+
+@Client.on_message(filters.command("add_user"))
+async def add_user(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("This command is only for Admin.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("renew_plan"))
+async def renew_plan(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("User's plan renewed.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("extend_plan"))
+async def extend_plan(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("User's plan extended.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("remove_user"))
+async def remove_user(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("User removed.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("add_videos"))
+async def add_videos(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("Number of videos set for user.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("setott"))
+async def setott(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("OTTs set or removed for user.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("premium_users"))
+async def premium_users(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("Premium users details here.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
+
+@Client.on_message(filters.command("total_premium_users"))
+async def total_premium_users(client, message):
+    await message.reply_text("50 premium users")
+
+@Client.on_message(filters.command("reset_videos"))
+async def reset_videos(client, message):
+    if message.from_user.id in ADMINS:
+        await message.reply_text("Videos reset.")
+    else:
+        await message.reply_text("You are not authorized to use this command.")
