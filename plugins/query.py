@@ -98,7 +98,8 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
@@ -121,7 +122,8 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
+                    InlineKeyboardButton("Support Group ⚡", url=SUPPORT_CHATS),
+                    InlineKeyboardButton("Update Channel 👨‍💻", url=UPDATE_CHANNEL)
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
