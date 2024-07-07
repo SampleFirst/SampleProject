@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(a=message.from_user.id, b=message.from_user.username, c=message.from_user.mention))
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -53,7 +53,7 @@ async def log_file(bot, message):
 async def about(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(a=message.from_user.id, b=message.from_user.username, c=message.from_user.mention))
     await message.reply_text(
         text=script.ABOUT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
@@ -68,7 +68,7 @@ async def about(client, message):
 async def help(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(a=message.from_user.id, b=message.from_user.username, c=message.from_user.mention))
     await message.reply_text(
         text=script.HELP.format(contact=CONTACT_US),
         disable_web_page_preview=True,
@@ -83,7 +83,7 @@ async def help(client, message):
 async def features(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(a=message.from_user.id, b=message.from_user.username, c=message.from_user.mention))
     await message.reply_text(
         text=script.FEATURE.format(user=message.from_user.mention),
         disable_web_page_preview=True,
@@ -98,7 +98,7 @@ async def features(client, message):
 async def otts(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(a=message.from_user.id, b=message.from_user.username, c=message.from_user.mention))
     await message.reply_text(
         text=script.OTT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
