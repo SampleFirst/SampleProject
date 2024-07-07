@@ -8,6 +8,17 @@ from info import ADMINS, SUPPORT_CHATS, UPDATE_CHANNEL, CONTACT_US
 logger = logging.getLogger(__name__)
 
 
+@Client.on_message((filters.group) & filters.text & filters.incoming)
+async def text_filter(client, message):
+    await message.reply_text(
+        text="You don't have an Active plan yet.\n\nbuy Premium plan with 👇",
+        disable_web_page_preview=True,
+        quote=True,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")]]
+        )
+    )
+
 # Callback query handlers
 @Client.on_callback_query()
 async def callback_handler(client, callback_query):
@@ -87,7 +98,7 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Earn Coins", url="https://t.me/BraveAlphaBot?start=start")
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
@@ -110,7 +121,7 @@ async def callback_handler(client, callback_query):
         buttons = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Earn Coins", url="https://t.me/BraveAlphaBot?start=start")
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
