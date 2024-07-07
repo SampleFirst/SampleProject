@@ -12,6 +12,7 @@ from pyrogram import Client
 from aiohttp import web
 from datetime import date, datetime 
 import pytz
+from Script import script
 from plugins import web_server
 from utils import temp
 
