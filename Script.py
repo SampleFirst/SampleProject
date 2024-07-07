@@ -94,3 +94,12 @@ Total Users: {total_users}
 Database Size: {size}
 Free Space: {free}**"""
     
+    RESTART_TXT = """#Restarted
+
+🔄 Bot Restarted!
+📅 Date: <code>{a}</code>
+⏰ Time: <code>{b}</code>
+🌐 Timezone: <code>Asia/Kolkata</code>
+
+#{c}
+#Restart_{c}"""
