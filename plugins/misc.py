@@ -3,7 +3,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from database.users_chats_db import db
-from info import ADMINS
+from info import ADMINS, CONTACT_US
 from utils import get_size
 from Script import script
 
@@ -43,18 +43,27 @@ async def list_users(bot, message):
     except Exception as e:
         await msg.edit(f"An error occurred: {e}")
         
-# Define command handlers
-@Client.on_message(filters.command("features"))
-async def features(client, message):
-    await message.reply_text("Available features")
-
 @Client.on_message(filters.command("plans"))
 async def plans(client, message):
-    await message.reply_text("Plan details will be added here.")
+    await message.reply_text(
+        text=script.PLANS.format(contact=CONTACT_US),
+        disable_web_page_preview=True,
+        quote=True,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")]]
+        )
+    )
 
 @Client.on_message(filters.command("myplan"))
 async def myplan(client, message):
-    await message.reply_text("You don't have a plan yet.")
+    await message.reply_text(
+        text="You don't have an Active plan yet.\n\nbuy Premium plan with 👇",
+        disable_web_page_preview=True,
+        quote=True,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")]]
+        )
+    )
 
 @Client.on_message(filters.command("add_user"))
 async def add_user(client, message):
