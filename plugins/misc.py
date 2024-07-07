@@ -4,8 +4,8 @@ from pyrogram import Client, filters
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from database.users_chats_db import db
 from info import ADMINS
+from utils import get_size
 from Script import script
-
 
 logger = logging.getLogger(__name__)
 
