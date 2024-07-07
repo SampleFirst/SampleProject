@@ -89,3 +89,8 @@ If the bot doesn't respond, contact [Admin]({contact})."""
 
 • Auto thumbnail support."""
 
+    STATS_TEXT = """**Bot Stats\n
+Total Users: {total_users}
+Database Size: {size}
+Free Space: {free}**"""
+    
