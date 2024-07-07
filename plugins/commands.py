@@ -22,8 +22,8 @@ async def start(client, message):
             ],
             [
                 InlineKeyboardButton("About", callback_data="about"),
-                InlineKeyboardButton("Help", callback_data="help"),
-                InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
+                InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                InlineKeyboardButton("Help", callback_data="help")
             ],
             [
                 
@@ -76,8 +76,8 @@ async def help(client, message):
     )
 
 # Feature command
-@Client.on_message(filters.command("feature") & filters.private & filters.incoming)
-async def feature(client, message):
+@Client.on_message(filters.command("features") & filters.private & filters.incoming)
+async def features(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(user.id, user.first_name)
     await message.reply_text(
