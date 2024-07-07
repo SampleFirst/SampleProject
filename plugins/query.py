@@ -31,8 +31,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
-                    InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Help", callback_data="help")
                 ],
                 [
                     
@@ -55,8 +55,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("Home", callback_data="home"),
-                    InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Help", callback_data="help")
                 ],
                 [
                     
@@ -79,8 +79,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
-                    InlineKeyboardButton("Home", callback_data="home"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Home", callback_data="home")
                 ],
                 [
                     
@@ -102,8 +102,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
-                    InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Help", callback_data="help")
                 ],
                 [
                     
@@ -125,8 +125,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
-                    InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Help", callback_data="help")
                 ],
                 [
                     
@@ -149,8 +149,8 @@ async def callback_handler(client, callback_query):
                 ],
                 [
                     InlineKeyboardButton("About", callback_data="about"),
-                    InlineKeyboardButton("Help", callback_data="help"),
-                    InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                    InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium"),
+                    InlineKeyboardButton("Help", callback_data="help")
                 ],
                 [
                     
