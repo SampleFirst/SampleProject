@@ -23,7 +23,7 @@ async def start(client, message):
             [
                 InlineKeyboardButton("About", callback_data="about"),
                 InlineKeyboardButton("Help", callback_data="help"),
-                InlineKeyboardButton("Contact Us", url=CONTACT_US)
+                InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")
             ],
             [
                 
@@ -85,21 +85,21 @@ async def feature(client, message):
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Cancel", callback_data="cancel")]]
+            [[InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")]]
         )
     )
 
 # OTT command
-@Client.on_message(filters.command("ott") & filters.private & filters.incoming)
-async def ott(client, message):
+@Client.on_message(filters.command("otts") & filters.private & filters.incoming)
+async def otts(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(user.id, user.first_name)
     await message.reply_text(
-        text=script.OTT.format(user=message.from_user.mention, bot=temp.U_NAME),
+        text=script.OTT.format(bot=temp.U_NAME, contact=CONTACT_US),
         disable_web_page_preview=True,
         quote=True,
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Cancel", callback_data="cancel")]]
+            [[InlineKeyboardButton("Buy Premium", url="https://t.me/BraveAlphaBot?start=premium")]]
         )
     )
 
