@@ -94,6 +94,11 @@ Total Users: {total_users}
 Database Size: {size}
 Free Space: {free}**"""
     
+    LOG_TEXT_P = """#NewUser
+ID - <code>{a}</code>
+Name - {b}
+Mention - {c}"""
+
     RESTART_TXT = """#Restarted
 
 🔄 Bot Restarted!
