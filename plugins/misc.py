@@ -1,6 +1,7 @@
 import logging
 import asyncio
 from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from database.users_chats_db import db
 from info import ADMINS, CONTACT_US
