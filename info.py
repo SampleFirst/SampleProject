@@ -19,7 +19,7 @@ PORT = environ.get("PORT", "8080")
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
 
-SUPPORT_CHATS = environ.get('SUPPORT_CHATS', 'https://t.me/YourSupportGroup')
+SUPPORT_CHATS = environ.get('SUPPORT_CHATS', 'https://t.me/YoursSupportGroup')
 UPDATE_CHANNEL = environ.get('UPDATE_CHANNEL', 'https://t.me/YourUpdateChannel')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 CONTACT_US = environ.get('CONTACT_US', 'https://t.me/YourContact')
