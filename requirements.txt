@@ -1,4 +1,4 @@
-git+https://github.com/MKN-BOTZ/pyrogram 
+pyrogram
 tgcrypto
 pymongo[srv]
 motor
@@ -6,10 +6,13 @@ marshmallow
 umongo
 requests
 bs4
-imdbpy
 datetime
 aiohttp
-pytz
+aiofiles 
 dnspython
+opencv-python-headless
+python-dotenv
+wget
 pytz
 pip
+
