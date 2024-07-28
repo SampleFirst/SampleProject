@@ -1,4 +1,4 @@
-git+https://github.com/MKN-BOTZ/pyrogram  
+pyrogram>=2.1.22  
 tgcrypto
 pymongo[srv]
 motor
