@@ -1,30 +1,35 @@
 import logging
 import logging.config
-import asyncio
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
+import asyncio
+from pyrogram import Client, __version__
+from pyrogram.raw.all import layer
+from database.users_chats_db import db
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, PORT, LOG_CHANNEL
-from pyrogram import Client 
+from utils import temp
 from aiohttp import web
 from datetime import date, datetime 
 import pytz
-from Script import script
+from Script import script 
 from plugins import web_server
-from utils import temp
+from pyrogram import types
 
 class Bot(Client):
+
     def __init__(self):
         super().__init__(
             name=SESSION,
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            workers=20,
-            plugins={'root': 'plugins'}
+            workers=50,
+            plugins={"root": "plugins"},
+            sleep_threshold=5,
         )
 
     async def start(self):
@@ -46,7 +51,7 @@ class Bot(Client):
     async def stop(self):
         await super().stop()
         print("Session stopped. Bye!!")
-
+    
 
 app = Bot()
 app.run()
