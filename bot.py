@@ -16,6 +16,7 @@ from Script import script
 from plugins import web_server
 from utils import temp
 
+
 class Bot(Client):
     def __init__(self):
         super().__init__(
@@ -31,18 +32,23 @@ class Bot(Client):
         await super().start()
         me = await self.get_me()
         temp.U_NAME = me.username
-        print(f"New session started for {me.first_name}({me.username})")
+        print(f"New session started for {me.first_name} ({me.username})")
         tz = pytz.timezone('Asia/Kolkata')
         today = date.today()
         now = datetime.now(tz)
         temp.UPTIME = now
         time = now.strftime("%H:%M:%S %p")
-        await self.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(a=today, b=time, c=temp.U_NAME))
+        try:
+            await self.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(a=today, b=time, c=temp.U_NAME))
+        except TypeError as e:
+            logging.error(f"Failed to send message: {e}")
+            raise
+
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
         await web.TCPSite(app, bind_address, PORT).start()
-        
+
     async def stop(self):
         await super().stop()
         print("Session stopped. Bye!!")
