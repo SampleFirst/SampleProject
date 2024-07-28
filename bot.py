@@ -38,17 +38,16 @@ class Bot(Client):
         now = datetime.now(tz)
         temp.UPTIME = now
         time = now.strftime("%H:%M:%S %p")
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
         try:
             await self.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(a=today, b=time, c=temp.U_NAME))
         except TypeError as e:
             logging.error(f"Failed to send message: {e}")
             raise
-
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, PORT).start()
-
+            
     async def stop(self):
         await super().stop()
         print("Session stopped. Bye!!")
